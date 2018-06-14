@@ -11,19 +11,24 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<style>
 		body {
-			background-color: #888;
-			background-image: url("background.png");
+			background-color: #ededed;
+			background-image: url("https://raw.githubusercontent.com/mattieice7486/friendfinder/master/app/public/background.png");
 			background-size: cover;
 			background-position: center;
 			background-attachment: fixed;
 			position: relative;
 			height: 100vh;
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 		}
-	
 		#survey-div {
-			background-color: #888;
+			background-color: #ededed;
 			opacity: 0.95;
 			padding: 20px;
+		}
+		#submit {
+			margin-left: 35%;
+			margin-right: 35%;
+			width: 30%;
 		}
 	</style>
 </head>
@@ -42,8 +47,6 @@
 					<div class="form-group">
 						<label for="pic">URL for Photo: (Required)</label>
 						<input type="text" class="form-control" id="pic">
-						<p>Generic Man: http://clipartix.com/wp-content/uploads/2016/05/Stick-figure-construction-worker-clipart-image-clip-art-a.jpg<p>
-						<p>Generic Woman: https://s-media-cache-ak0.pinimg.com/236x/a1/01/50/a1015051b09805f58525240c87b5c50b.jpg</p>
 					</div>
 					<hr>
 					<h2>Rate how strongly you agree with the following statements:</h2>
@@ -248,9 +251,9 @@
 				var currentBest = 100;
 				var differenceArray = [];
 				//loops through all friends with the exception of the one just created
-				for(i=0; i < res.length - 1; i++){
+				for(i = 0; i < res.length - 1; i++){
 					//compares the values from the survey questions and pushes the absolute value of the differences to the difference array
-					for(j=0; j<10; j++){
+					for(j = 0; j < 10; j++){
 						var currentDifference = newFriend.scores[j] - res[i].scores[j];
 						differenceArray.push(Math.abs(currentDifference));
 					}
@@ -285,7 +288,7 @@
 		
 		});
 function add(a, b){
-	return a+b;
+	return a + b;
 };
 </script>
 </body>
